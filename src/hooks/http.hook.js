@@ -5,7 +5,7 @@ export const useHttp = () => {
 
     const request = useCallback(async (url, method = 'GET', body = null, headers = {
         'accept': 'application/json',
-        'X-API-KEY': '4TAA2GY-J584DF8-QB6E336-MBKTT11'
+        'X-API-KEY': '***'
     }) => {
 
 
