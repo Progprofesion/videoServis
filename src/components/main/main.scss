@@ -103,14 +103,13 @@
     &__poster {
         position: absolute;
         width: 1440px;
-        // height: 600px;
         z-index: -1;
     }
 
     &__info {
         margin-top: 78px;
         width: 404px;
-        height: 285px;
+        max-height: 285px;
         color: white;
 
         &_title {

@@ -1,7 +1,6 @@
-import { useHttp } from '../hooks/http.hook';
 
 const useMarvelService = () => {
-    const { request, clearError, process, setProcess } = useHttp();
+
 
 
     const getAllCharacters = async () => {
