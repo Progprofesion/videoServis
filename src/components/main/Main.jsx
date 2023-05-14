@@ -1,5 +1,7 @@
+import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from "react";
-import axios from "axios";
+import useGetMainFilm from '../../hooks/useGetMainFilm';
+import useGetTopFilm from '../../hooks/useGetTopFilm';
 import tv from "../../assets/icon/tv.svg";
 import poster from "../../assets/img/poster.png";
 import iconSeacrh from "../../assets/icon/iconSearch.svg";
@@ -10,31 +12,14 @@ import "./main.scss";
 
 const Main = () => {
 
-    const [data, setData] = useState("");
 
-    const getMainFilm = async () => {
+    const mainFilm = useSelector((state) => state.dataSlice.mainFilm);
 
-        axios.get("https://api.kinopoisk.dev/v1.3/movie/1009536", {
-            headers: {
-                'accept': 'application/json',
-                'X-API-KEY': `${process.env.REACT_APP_KINOPOISK_KEY}`
-            }
-        })
-            .then(function (response) {
-                setData(response.data)
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+    const dispatch = useDispatch();
 
+    useGetMainFilm();
+    useGetTopFilm();
 
-
-    useEffect(() => {
-        getMainFilm();
-    }, [])
-
-    // console.log(data.data.name);
     return (
         <div className="main">
             <div className="main__poster"></div>
@@ -51,19 +36,19 @@ const Main = () => {
                     </div>
                     <div className="main__navbar_menuWrapp">
                         <div className="main__navbar_signIn">Sign in</div>
-                        <div className="main__navbar_menu">
+                        <button className="main__navbar_menu">
                             <span></span>
                             <span></span>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div className="main__info">
-                    <div className="main__info_title">{data.name}</div>
+                    <div className="main__info_title">{mainFilm.name}</div>
                     <div className="main__info_rating">
-                        <div className="main__info_imdb">{data.rating ? data.rating.imdb : null}</div>
-                        <div className="main__info_kp">{data.rating ? data.rating.kp : null}</div>
+                        <div className="main__info_imdb">{mainFilm.rating ? mainFilm.rating.imdb : null}</div>
+                        <div className="main__info_kp">{mainFilm.rating ? mainFilm.rating.kp : null}</div>
                     </div>
-                    <div className="main__info_descr">{data.description}</div>
+                    <div className="main__info_descr">{mainFilm.description}</div>
                 </div>
                 <Button />
             </div>

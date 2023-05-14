@@ -58,6 +58,7 @@
             font-weight: 700;
             font-size: 16px;
             color: #FFFFFF;
+            cursor: pointer;
         }
 
         &_menuWrapp {
@@ -74,6 +75,8 @@
             height: 36px;
             background: #BE123C;
             border-radius: 100%;
+            cursor: pointer;
+            border: none;
 
             :nth-child(1) {
                 display: block;
@@ -90,13 +93,6 @@
                 margin-top: 5px;
                 background: #FFFFFF;
             }
-
-            // span {
-            //     display: block;
-            //     width: 10px;
-            //     height: 2px;
-            //     background: #FFFFFF;
-            // }
         }
     }
 

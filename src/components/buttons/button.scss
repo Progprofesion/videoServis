@@ -1,0 +1,21 @@
+.button {
+    margin-top: 15px;
+    width: 170px;
+    height: 35px;
+    background: #BE123C;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+
+    &__descr {
+        margin-left: 17px;
+        margin-right: 17px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        color: #FFFFFF;
+    }
+}
