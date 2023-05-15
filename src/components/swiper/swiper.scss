@@ -1,0 +1,117 @@
+.swiper {
+    position: relative;
+    margin-top: 200px;
+    width: 1224px;
+    height: 600px;
+    // border-radius: 50px;
+
+    &__wrapp {
+        text-align: left;
+        display: flex;
+        width: 850px;
+        height: 492px;
+        margin-top: -120px;
+    }
+
+    &__descr {
+        position: relative;
+        margin-top: 110px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+        letter-spacing: 0.015em;
+        color: rgba(255, 255, 255, 0.78);
+    }
+
+    &__wrappComma {
+        position: absolute;
+        width: 103px;
+        height: 320px;
+    }
+
+    &__comma {
+        position: absolute;
+        top: -50px;
+        left: -50px;
+    }
+
+    &__img {
+        position: relative;
+        width: 250px;
+        height: 370px;
+    }
+
+    &__wrappName {
+        position: absolute;
+        width: 265px;
+        height: 90px;
+        bottom: 144px;
+        left: 328px;
+        padding: 10px 22px 16px 22px;
+        border-radius: 8px;
+        // background-image: url('../../assets//img/swiperName.png');
+        z-index: 100;
+
+        &-name {
+            font-weight: 500;
+            font-size: 26px;
+            letter-spacing: 0.015em;
+            color: rgba(255, 253, 253, 0.78);
+        }
+
+        &-post {
+            text-align: left;
+        }
+    }
+
+}
+
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.swiper-slide img {
+    display: block;
+    object-fit: cover;
+    z-index: 100;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    transition: 500ms;
+}
+
+.swiper-button-prev {
+    // background: url('../../assets/icon/leftSwiper.svg') center / cover no-repeat;
+    -webkit-text-fill-color: transparent;
+}
+
+.swiper-button-next {
+    width: 12px;
+    height: 24px;
+    // background: url('../../assets/icon/nextSwiper.svg') center / cover no-repeat;
+    -webkit-text-fill-color: transparent;
+}
+
+.swiper-pagination-bullet {
+    width: 44px;
+    height: 8px;
+    background: #FF6E30;
+    border-radius: 4px;
+}

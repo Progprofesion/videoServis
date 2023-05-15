@@ -7,7 +7,7 @@ const useGetTopFilm = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get("https://api.kinopoisk.dev/v1.3/movie?sortField=2022&sortType=-1&page=1&limit=4", {
+        axios.get("https://api.kinopoisk.dev/v1.3/movie?page=1&limit=4&year=2023&poster.url=%21null", {
             headers: {
                 'accept': 'application/json',
                 'X-API-KEY': `${process.env.REACT_APP_KINOPOISK_KEY}`
