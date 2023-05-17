@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Card from "../card/Card";
+import { setGenre } from "../../store/reducer/dataSlice";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,18 +16,33 @@ import { Pagination, Navigation } from "swiper";
 
 export default function App() {
 
-
+    const dispatch = useDispatch();
     const topFilm = useSelector((state) => state.dataSlice.topFilm);
+    const genre = useSelector((state) => state.dataSlice.genre);
     const docs = topFilm.docs;
 
+    useEffect(() => {
+        if (docs) {
+            // console.log(docs[0].genres);
+            docs.map((item, i) => {
+                // item.genres.map((genre, i) => {
+                //     dispatch(setGenre(genre))
+                // });
+                console.log(item);
+                // for (let i = 0; i < 4; i++) {
+                //     if (item.genres[i]) {
+                //         // console.log(item.genres.name);
+                //     }
+                // }
 
-    if (docs) {
-        // console.log(docs[0].genres);
-        // docs.map((item) => {
-        //     console.log(item.genres.map(item => item.name));
-        // })
-    }
-    // consolrrre.log(topFilm);
+
+            })
+            // console.log(genre);
+        }
+    }, [topFilm])
+
+
+    // console.log(genre);
 
     return (
         <>
@@ -42,14 +59,9 @@ export default function App() {
                     className="swiper"
                 >
                     {
+
                         docs ? docs.map((item, i) => {
-                            // if (item.genres[i]) {
-                            //     console.log(item.genres[1]);
-                            // }
-                            {
-                                let test = { ...item.genres }
-                                console.log(test[i].name);
-                            }
+
                             return <SwiperSlide key={item.id}>
                                 <Card
                                     poster={item.poster.url}
@@ -58,9 +70,7 @@ export default function App() {
                                     title={item.name}
                                     imdb={item.rating.imdb}
                                     kp={item.rating.kp}
-
-                                // {...item.genres.name}
-
+                                    genres={item.genres.map(genre => genre.name).join(', ')}
                                 />
                             </SwiperSlide>
                         }) : null

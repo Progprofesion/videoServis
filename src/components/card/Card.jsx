@@ -20,22 +20,20 @@ const Card = ({ poster, country, year, title, imdb, kp, genres }) => {
 
     return (
         <div className="card">
-            <div className="container">
-                <img src={poster} alt="" className="card__poster" />
-                <div className="card__year">{`${country}, ${year}`}</div>
-                <div className="card__title">{title}</div>
-                <div className="card__rating">
-                    <div className="card__rating_wrapp">
-                        <img src="icon" alt="icon" className="card__rating_icon" />
-                        <div className="card__ratingKp">{kp}</div>
-                    </div>
-                    <div className="card__rating_wrapp">
-                        <img src="icon" alt="icon" className="card__ratingimdb_icon" />
-                        <div className="card__ratingKp">{imdb}</div>
-                    </div>
+            <img src={poster} alt="" className="card__poster" />
+            <div className="card__year">{`${country}, ${year}`}</div>
+            <div className="card__title">{title}</div>
+            <div className="card__rating">
+                <div className="card__rating_wrapp">
+                    <img src="icon" alt="icon" className="card__rating_icon" />
+                    <div className="card__ratingKp">{kp}</div>
                 </div>
-                <div className="card__genres">{genres}</div>
+                <div className="card__rating_wrapp">
+                    <img src="icon" alt="icon" className="card__ratingimdb_icon" />
+                    <div className="card__ratingKp">{imdb}</div>
+                </div>
             </div>
+            <div className="card__genres">{genres}</div>
         </div>
     )
 }

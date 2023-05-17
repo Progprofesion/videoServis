@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = ({
     mainFilm: "",
     topFilm: "",
+    genre: [],
 })
 
 const dataFilmStore = createSlice({
@@ -14,6 +15,9 @@ const dataFilmStore = createSlice({
         },
         setTopFilm: (state, action) => {
             state.topFilm = action.payload
+        },
+        setGenre: (state, action) => {
+            state.genre.push(action.payload)
         }
     }
 });
@@ -21,7 +25,7 @@ const dataFilmStore = createSlice({
 export const {
     setMainfilm,
     setTopFilm,
-
+    setGenre
 } = dataFilmStore.actions;
 
 
