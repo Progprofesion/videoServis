@@ -1,0 +1,16 @@
+.cardActors {
+    width: 250px;
+    height: 405px;
+
+    &__img {
+        width: 250px;
+        height: 370px;
+    }
+
+    &__name {
+        font-family: 'DM Sans';
+        font-weight: 700;
+        font-size: 18px;
+        color: #111827;
+    }
+}
