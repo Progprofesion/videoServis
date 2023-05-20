@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Main from "../main/Main";
-import CardListFilm from "../cardListFilm/CardListFilm";
-import CardListActors from "../cardListActors/CardListActors";
+import CardList from "../cardList/CardList";
+// eslint-disable-next-line
 import Swiper from "../swiper/Swiper";
 import './app.scss'
 
@@ -13,9 +13,9 @@ const App = () => {
     return (
         <main className='app'>
             <Main />
-            <CardListFilm title="Featured Movie" dataArr={topFilm} />
-            <CardListFilm title="New Arrival" dataArr={newFilm} style={{ marginTop: "0px" }} />
-            <CardListFilm title="Featured Casts" dataArr={actors} visible={true} style={{ marginTop: "0px" }} />
+            <CardList title="Featured Movie" dataArr={topFilm} />
+            <CardList title="New Arrival" dataArr={newFilm} style={{ marginTop: "0px" }} />
+            <CardList title="Featured Casts" dataArr={actors} visible={true} style={{ marginTop: "0px" }} />
         </main>
     )
 }
