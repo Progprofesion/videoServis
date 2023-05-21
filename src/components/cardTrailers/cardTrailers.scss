@@ -1,0 +1,16 @@
+.cardTrailers {
+    width: 450px;
+    height: 288px;
+
+    &__img {
+        width: 450px;
+        height: 253px;
+    }
+
+    &__name {
+        font-family: 'DM Sans';
+        font-weight: 700;
+        font-size: 18px;
+        color: #111827;
+    }
+}

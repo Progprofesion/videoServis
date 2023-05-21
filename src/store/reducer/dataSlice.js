@@ -4,6 +4,7 @@ const initialState = ({
     mainFilm: "",
     topFilm: "",
     newFilm: "",
+    trailers: "",
     actors: ""
 })
 
@@ -20,6 +21,9 @@ const dataFilmStore = createSlice({
         setNewFilm: (state, action) => {
             state.newFilm = action.payload
         },
+        setTrailers: (state, action) => {
+            state.trailers = action.payload
+        },
         setActors: (state, action) => {
             state.actors = action.payload
         }
@@ -30,6 +34,7 @@ export const {
     setMainfilm,
     setTopFilm,
     setNewFilm,
+    setTrailers,
     setActors
 } = dataFilmStore.actions;
 

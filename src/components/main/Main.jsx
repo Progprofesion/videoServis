@@ -1,9 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from "react";
 import useGetMainFilm from '../../hooks/useGetMainFilm';
-import useGetTopFilm from '../../hooks/useGetTopFilm';
-import useGetNewFilm from '../../hooks/useGetNewFilm';
+import useGetTopFilm from '../../hooks/useGetTopFilms';
+import useGetNewFilm from '../../hooks/useGetNewFilms';
 import useGetActors from '../../hooks/useGetActors';
+import useGetTrailers from "../../hooks/useGetTarilers";
 import tv from "../../assets/icon/tv.svg";
 import poster from "../../assets/img/poster.png";
 import iconSeacrh from "../../assets/icon/iconSearch.svg";
@@ -23,6 +24,7 @@ const Main = () => {
     useGetTopFilm();
     useGetNewFilm();
     useGetActors();
+    useGetTrailers();
 
     return (
         <div className="main">
